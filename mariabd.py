@@ -20,12 +20,14 @@ except mariadb.Error as e:
 # Vi trenger CURSOR for å utføre QUERIES
 cur = conn.cursor()
 
-""" cur.execute('SELECT * FROM navn WHERE fornavn LIKE "J%";')
+cur.execute('SELECT * FROM adjectives;')
+
+
 for row in cur:
     text = ''
     for value in row:
         text += str(value) + '\t\t'
 
     print(text)
- """
+
 cur. close()
