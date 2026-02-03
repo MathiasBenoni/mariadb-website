@@ -1,6 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for
-
+from flask import *
+from mariabd_python import *
+import mariabd_python
 app = Flask(__name__)
+
 
 @app.route("/")
 def index():
@@ -20,6 +22,15 @@ def handle_data():
         return f'Data received! Your name is: {first_name} {last_name}'
     
     return redirect(url_for('index'))
+
+@app.route("/add", methods=["POST"])
+def add():
+    adjective = request.form.get('adjective')
+
+    mariabd_python.write(adjective)
+
+    print(f"Added {adjective}")
+    return f"Added {adjective}"
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -30,4 +30,12 @@ for row in cur:
 
     print(text)
 
-cur. close()
+cur.close()
+
+
+
+def write(x):
+    cur = conn.cursor()
+    cur.execute(f'INSERT INTO adjectives (adjective) VALUES ("{x}");')
+
+    cur.close()
