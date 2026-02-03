@@ -1,9 +1,10 @@
 from flask import *
-
+from mariabd_python import *
 app = Flask(__name__)
 
 @app.route("/")
 def index():
+    write("x")
     return render_template("index.html")
 
 @app.route('/submit', methods=['POST'])
@@ -20,6 +21,9 @@ def handle_data():
     
     return redirect(url_for('index'))
 
+
+def write(x):
+    return f'{x}'
 
 if __name__ == "__main__":
     app.run(debug=True)
