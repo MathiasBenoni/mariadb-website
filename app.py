@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import *
 
 app = Flask(__name__)
 
@@ -11,11 +11,12 @@ def handle_data():
     if request.method == 'POST':
         
         first_name = request.form.get('fname')
+        last_name = request.form.get('lname')
 
         print(f"Received: {first_name}")
-
+        print(f"Received: {last_name}")
         # Return a response or redirect to another page
-        return f'Data received! Your name is: {first_name}'
+        return f'Data received! Your name is: {first_name} {last_name}'
     
     return redirect(url_for('index'))
 
