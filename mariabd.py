@@ -20,7 +20,7 @@ except mariadb.Error as e:
 # Vi trenger CURSOR for å utføre QUERIES
 cur = conn.cursor()
 
-cur.execute('SELECT * FROM adjectives;')
+cur.execute('SELECT adjective FROM adjectives;')
 
 
 for row in cur:
