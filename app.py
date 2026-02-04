@@ -38,7 +38,8 @@ def handle_data():
 def add():
     adjective = request.form.get('adjective')
     if contains_space(adjective) == True:
-        """ Ask again """
+        return redirect(url_for('index'))
+
         
     write(adjective.lower())
     adjective_list = get_adjectives()
