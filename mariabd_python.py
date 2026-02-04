@@ -35,6 +35,6 @@ cur.close()
 
 def write(x):
     cur = conn.cursor()
-    cur.execute(f'INSERT INTO adjectives (adjective) VALUES ("{x}");')
+    cur.execute('INSERT INTO adjectives (adjective) VALUES (?);', (x,))
     conn.commit()
     cur.close()
