@@ -25,17 +25,17 @@ def handle_data():
     
     return redirect(url_for('index'))
 
-@app.route("/add", methods=["POST"])
+@app.route("/", methods=["POST"])
 def add():
     adjective = request.form.get('adjective')
 
     mariabd_python.write(adjective)
-
     adjective_list = get_adjectives()
 
     print(adjective_list)
     print(f"Added {adjective}")
-    return f"Added {adjective}"
+
+    return redirect(url_for('index'))
 
 if __name__ == "__main__":
     app.run(debug=True)
