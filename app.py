@@ -7,11 +7,12 @@ app = Flask(__name__)
 def most_common(lst):
     return max(set(lst), key=lst.count)
 
+def contains_space(string):
+    return ' ' in string
 
 @app.route("/")
 def index():
     adjectives = get_adjectives()
-
     if adjectives:
         the_adjective = most_common(adjectives).capitalize()
     else:
@@ -36,7 +37,9 @@ def handle_data():
 @app.route("/", methods=["POST"])
 def add():
     adjective = request.form.get('adjective')
-
+    if contains_space(adjective) == True:
+        """ Ask again """
+        
     write(adjective.lower())
     adjective_list = get_adjectives()
 
