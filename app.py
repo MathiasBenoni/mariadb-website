@@ -7,9 +7,9 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    message = "Hello from python!!!"    
+   
     adjectives = mariabd_python.get_adjectives()
-    return render_template("index.html", message = message, html_adjective_list = adjectives)
+    return render_template("index.html", html_adjective_list = adjectives)
 
 @app.route('/submit', methods=['POST'])
 def handle_data():
