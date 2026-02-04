@@ -13,7 +13,7 @@ def index():
     adjectives = get_adjectives()
 
     if adjectives:
-        the_adjective = most_common(adjectives)
+        the_adjective = most_common(adjectives).capitalize()
     else:
         the_adjective = "Nothing here yet"
 
