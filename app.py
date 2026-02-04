@@ -11,7 +11,11 @@ def most_common(lst):
 @app.route("/")
 def index():
     adjectives = get_adjectives()
-    the_adjective = most_common(adjectives)
+
+    if adjectives:
+        the_adjective = most_common(adjectives)
+    else:
+        the_adjective = "Nothing here yet"
 
     return render_template("index.html", html_adjective_list = adjectives, the_adjective_html = the_adjective)
 
@@ -33,7 +37,7 @@ def handle_data():
 def add():
     adjective = request.form.get('adjective')
 
-    write(adjective)
+    write(adjective.lower())
     adjective_list = get_adjectives()
 
     print(adjective_list)
