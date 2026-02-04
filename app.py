@@ -1,15 +1,19 @@
 from flask import *
 from mariabd_python import *
-import mariabd_python
 
 app = Flask(__name__)
 
 
+def most_common(lst):
+    return max(set(lst), key=lst.count)
+
+
 @app.route("/")
 def index():
-   
-    adjectives = mariabd_python.get_adjectives()
-    return render_template("index.html", html_adjective_list = adjectives)
+    adjectives = get_adjectives()
+    the_adjective = most_common(adjectives)
+
+    return render_template("index.html", html_adjective_list = adjectives, the_adjective_html = the_adjective)
 
 @app.route('/submit', methods=['POST'])
 def handle_data():
@@ -29,7 +33,7 @@ def handle_data():
 def add():
     adjective = request.form.get('adjective')
 
-    mariabd_python.write(adjective)
+    write(adjective)
     adjective_list = get_adjectives()
 
     print(adjective_list)
