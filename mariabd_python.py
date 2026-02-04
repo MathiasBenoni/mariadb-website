@@ -1,7 +1,6 @@
 import mariadb
 import sys
 
-
 try:
     conn = mariadb.connect(
         user="pythonuser",
@@ -37,5 +36,5 @@ cur.close()
 def write(x):
     cur = conn.cursor()
     cur.execute(f'INSERT INTO adjectives (adjective) VALUES ("{x}");')
-
+    conn.commit()
     cur.close()
