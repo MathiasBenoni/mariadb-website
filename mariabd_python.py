@@ -17,19 +17,7 @@ except mariadb.Error as e:
     sys.exit (1)
 
 # Vi trenger CURSOR for å utføre QUERIES
-cur = conn.cursor()
 
-cur.execute('SELECT adjective FROM adjectives;')
-
-
-for row in cur:
-    text = ''
-    for value in row:
-        text += str(value) + '\t\t'
-
-    print(text)
-
-cur.close()
 
 
 
@@ -37,4 +25,20 @@ def write(x):
     cur = conn.cursor()
     cur.execute('INSERT INTO adjectives (adjective) VALUES (?);', (x,))
     conn.commit()
+    cur.close()
+
+def get_adjectives():
+    gotten_adjectives = []
+
+    cur = conn.cursor()
+    cur.execute('SELECT adjective FROM adjectives;')
+
+    for row in cur:
+        text = ''
+        for value in row:
+            text += str(value)
+            gotten_adjectives.append(text)
+        print(text)
+        
+    return gotten_adjectives
     cur.close()

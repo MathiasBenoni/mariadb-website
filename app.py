@@ -30,6 +30,9 @@ def add():
 
     mariabd_python.write(adjective)
 
+    adjective_list = get_adjectives()
+
+    print(adjective_list)
     print(f"Added {adjective}")
     return f"Added {adjective}"
 
