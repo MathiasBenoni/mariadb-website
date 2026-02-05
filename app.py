@@ -7,8 +7,9 @@ app = Flask(__name__)
 def most_common(lst):
     return max(set(lst), key=lst.count)
 
-def contains_space(string):
-    return ' ' in string
+def contains_illegal_characters(string):
+    illegal_chars = {' ', ',', '.', '-', '_'}
+    return any(char in illegal_chars for char in string)
 
 @app.route("/")
 def index():
@@ -37,7 +38,7 @@ def handle_data():
 @app.route("/", methods=["POST"])
 def add():
     adjective = request.form.get('adjective')
-    if contains_space(adjective) == True:
+    if contains_illegal_characters(adjective) == True:
         return redirect(url_for('index'))
 
         
