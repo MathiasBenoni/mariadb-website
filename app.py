@@ -8,7 +8,10 @@ def most_common(lst):
     return max(set(lst), key=lst.count)
 
 def contains_illegal_characters(string):
-    illegal_chars = {' ', ',', '.', '-', '_'}
+    illegal_chars = {' ', ',', '.', '-', '_', ':', ';', '<', '>', '!', '#', '&', '()', '=', '?', '+'}
+
+
+
     return any(char in illegal_chars for char in string)
 
 @app.route("/")
