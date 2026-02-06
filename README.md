@@ -10,7 +10,7 @@ Also planned to do a wordcloud for all the adjectives, instead of just a word
 
 ## Create an environment
 
-Create a project folder and a .venv folder within with this command:
+Create a project folder and a `.venv` folder within with this command:
 
 ```
 mkdir myproject
@@ -20,7 +20,7 @@ python3 -m venv .venv
 
 ## Install Flask
 
-- Open a terminal or use the one in Visual Studio Code
+- Open a `terminal` or use the one in Visual Studio Code
 - Navigate to your project folder
 - Run the command bellow to install Flask
 
@@ -30,16 +30,16 @@ pip install Flask
 
 ## Install mariaDB for Mac
 
-If you are on mac, run this command to install mariaDB and update to latest version
+[If you are using Windows, go to mariaDB's website and follow the guide there](https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows)
+
+Run this command to install mariaDB and update to latest version
 
 ```
 brew install mariadb
 brew upgrade mariadb
 ```
 
-[If you are using Windows, go to mariaDB's website and follow the guide there](https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows)
-
-## Setup mariaDB for Mac
+## Start mariaDB for Mac
 
 Navigate to your local `terminal`.
 
@@ -55,21 +55,25 @@ If you later want to stop the database you can run
 brew services stop mariadb
 ```
 
-If it is your first time using mariaDB you need to login without a password to setup a password
+## Windows
+
+.....
+
+## Setup mariaDB
+
+If it is your first time using mariaDB, you need to login without a password to setup a password
 
 ```
 sudo mariadb -u root
 ```
 
-This now puts you inside mariaDB, if you want to exit mariaDB, just type `EXIT;` or `QUIT;`or just `Ctrl + D`
+This now puts you inside mariaDB, if you want to exit mariaDB, just type `EXIT;`, `QUIT;` or just `Ctrl + D`
 
 ### Setup your user
 
 ```
 CREATE USER 'username'@'localhost' IDENTIFIED BY 'secure_password';
 ```
-
-`username`is what you will use for logging in, as well as your `secure_password`
 
 #### The pythonscript uses `pythonuser` as username and `pythonpass`as password
 
@@ -81,12 +85,6 @@ You should now be logged in as root user, even though you just created a new one
 
 ```
 GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost';
-```
-
-#### Example
-
-```
-GRANT ALL PRIVILEGES ON *.* TO 'pythonuser'@'localhost';
 ```
 
 #### Give privileges to a specific database (Recommended)
@@ -121,11 +119,11 @@ And you should see something like
 +------------------------------------------------------------------+
 | GRANT USAGE ON *.* TO `pythonuser`@`localhost` IDENTIFIED BY PASSWORD
 |'*C85F42CED428CAE393E47738770729D0657BB541'
-| GRANT ALL PRIVILEGES ON `adjectives`.* TO `pythonuser`@`localhost`
+| GRANT SELECT, INSERT, UPDATE ON `adjectives`.* TO `pythonuser`@`localhost`
 +-------------------------------------------------------------------+
 ```
 
-### Example for complete user-generation
+### Complete user-generation
 
 ```
 CREATE USER 'pythonuser'@'localhost' IDENTIFIED BY 'pythonpass';
@@ -133,17 +131,42 @@ GRANT SELECT, INSERT UPDATE ON ON adjectives.* TO 'pythonuser'@'localhost';
 FLUSH PRIVILEGES;
 ```
 
-## Windows
-
-.......
-
 # Making the database
 
-### Run this to generate the database used in this project
+### Run this command to create the database used in this project
+
+```
+CREATE DATABASE adjectives;
+```
+
+#### Use the database
+
+```
+USE adjectives;
+```
+
+#### The code bellow will create all the neccesary information to get started
 
 ```
 CREATE TABLE adjectives (
     id INT AUTO_INCREMENT PRIMARY KEY,
     adjective VARCHAR(50) NOT NULL
 );
+```
+
+#### To be extra sure, run this command
+
+```
+DESCRIBE adjectives;
+```
+
+#### If it looks like this you are done, you can now `QUIT;`, `EXIT;` or `Ctrl + D`to get out of the terminal, and close it
+
+```
++-----------+-------------+------+-----+---------+----------------+
+| Field     | Type        | Null | Key | Default | Extra          |
++-----------+-------------+------+-----+---------+----------------+
+| id        | int(11)     | NO   | PRI | NULL    | auto_increment |
+| adjective | varchar(50) | NO   |     | NULL    |                |
++-----------+-------------+------+-----+---------+----------------+
 ```
