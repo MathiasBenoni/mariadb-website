@@ -160,7 +160,7 @@ CREATE TABLE adjectives (
 DESCRIBE adjectives;
 ```
 
-#### If it looks like this you are done, you can now `QUIT;`, `EXIT;` or `Ctrl + D`to get out of the terminal, and close it
+#### If it looks like this you are done, you can now `QUIT;`, `EXIT;` or `Ctrl + D` to get out of the terminal, and close it
 
 ```
 +-----------+-------------+------+-----+---------+----------------+
