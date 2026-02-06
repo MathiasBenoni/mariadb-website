@@ -37,7 +37,7 @@ brew install mariadb
 brew upgrade mariadb
 ```
 
-If you are using Windows, go to [mariaDB](https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows)'s website and follow the guide there
+[If you are using Windows, go to mariaDB's website and follow the guide there](https://mariadb.com/docs/server/server-management/install-and-upgrade-mariadb/installing-mariadb/binary-packages/installing-mariadb-msi-packages-on-windows)
 
 ## Setup mariaDB for Mac
 
@@ -89,7 +89,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost';
 GRANT ALL PRIVILEGES ON *.* TO 'pythonuser'@'localhost';
 ```
 
-#### Give privileges specific to a specific database (Recommended)
+#### Give privileges to a specific database (Recommended)
 
 ```
 GRANT SELECT, INSERT, UPDATE ON database_name.* TO 'username'@'localhost';
@@ -99,4 +99,51 @@ GRANT SELECT, INSERT, UPDATE ON database_name.* TO 'username'@'localhost';
 
 ```
 GRANT SELECT, INSERT, UPDATE ON adjectives.* TO 'pythonuser'@'localhost';
+```
+
+#### After you have done that, you need to save the changes
+
+```
+FLUSH PRIVILEGES;
+```
+
+#### If you are unsure that you have done it correctly you can run
+
+```
+SHOW GRANTS FOR 'pythonuser'@'localhost';
+```
+
+And you should see something like
+
+```
++------------------------------------------------------------------+
+| Grants for pythonuser@localhost
++------------------------------------------------------------------+
+| GRANT USAGE ON *.* TO `pythonuser`@`localhost` IDENTIFIED BY PASSWORD
+|'*C85F42CED428CAE393E47738770729D0657BB541'
+| GRANT ALL PRIVILEGES ON `adjectives`.* TO `pythonuser`@`localhost`
++-------------------------------------------------------------------+
+```
+
+### Example for complete user-generation
+
+```
+CREATE USER 'pythonuser'@'localhost' IDENTIFIED BY 'pythonpass';
+GRANT SELECT, INSERT UPDATE ON ON adjectives.* TO 'pythonuser'@'localhost';
+FLUSH PRIVILEGES;
+```
+
+## Windows
+
+.......
+
+# Making the database
+
+### Run this to generate the database used in this project
+
+```
+CREATE TABLE adjectives (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    adjective VARCHAR(50) NOT NULL
+);
 ```
