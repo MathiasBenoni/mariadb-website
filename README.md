@@ -115,10 +115,11 @@ SHOW GRANTS FOR 'pythonuser'@'localhost';
 
 And you should see something like
 
-| Grants for pythonuser@localhost |
-| GRANT USAGE ON _._ TO `pythonuser`@`localhost` IDENTIFIED BY PASSWORD '_C85F42CED428CAE393E47738770729D0657BB541' |
-| GRANT ALL PRIVILEGES ON `nisse`._ TO `pythonuser`@`localhost`|
-| GRANT ALL PRIVILEGES ON `adjectives`.\* TO `pythonuser`@`localhost` |
+| Grants for pythonuser@localhost                                                                                    |
+| ------------------------------------------------------------------------------------------------------------------ |
+| GRANT USAGE ON _._ TO `pythonuser`@`localhost` IDENTIFIED BY PASSWORD '\_C85F42CED428CAE393E47738770729D0657BB541' |
+| GRANT ALL PRIVILEGES ON `nisse`.\_ TO `pythonuser`@`localhost`                                                     |
+| GRANT ALL PRIVILEGES ON `adjectives`.\* TO `pythonuser`@`localhost`                                                |
 
 ### Complete user-generation
 
