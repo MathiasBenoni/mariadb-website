@@ -150,7 +150,8 @@ USE adjectives;
 ```
 CREATE TABLE adjectives (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    adjective VARCHAR(50) NOT NULL
+    adjective VARCHAR(50) NOT NULL,
+    counter INT NOT NULL
 );
 ```
 
@@ -160,13 +161,10 @@ CREATE TABLE adjectives (
 DESCRIBE adjectives;
 ```
 
-#### If it looks like this you are done, you can now `QUIT;`, `EXIT;` or `Ctrl + D` to get out of the terminal, and close it
+#### It should look like this, you can now `QUIT;`, `EXIT;` or `Ctrl + D` to get out of the terminal, and close it
 
-```
-+-----------+-------------+------+-----+---------+----------------+
-| Field     | Type        | Null | Key | Default | Extra          |
-+-----------+-------------+------+-----+---------+----------------+
-| id        | int(11)     | NO   | PRI | NULL    | auto_increment |
-| adjective | varchar(50) | NO   |     | NULL    |                |
-+-----------+-------------+------+-----+---------+----------------+
-```
+[logo]: /mariadb/images/database_image.png "Logo Title Text 2"
+
+[alt text](logo "Logo Title Text 1")
+
+![alt text][logo]
