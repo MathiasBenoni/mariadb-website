@@ -8,6 +8,10 @@ Also planned to do a wordcloud for all the adjectives, instead of just a word
 
 ## TODO's
 
+- [x] Update database
+- [ ] wordcloud
+- [ ] Styling
+
 # The installation
 
 ## Create an environment
