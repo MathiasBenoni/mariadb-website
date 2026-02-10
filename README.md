@@ -115,15 +115,10 @@ SHOW GRANTS FOR 'pythonuser'@'localhost';
 
 And you should see something like
 
-```
-+------------------------------------------------------------------+
-| Grants for pythonuser@localhost
-+------------------------------------------------------------------+
-| GRANT USAGE ON *.* TO `pythonuser`@`localhost` IDENTIFIED BY PASSWORD
-|'*C85F42CED428CAE393E47738770729D0657BB541'
-| GRANT SELECT, INSERT, UPDATE ON `adjectives`.* TO `pythonuser`@`localhost`
-+-------------------------------------------------------------------+
-```
+| Grants for pythonuser@localhost |
+| GRANT USAGE ON _._ TO `pythonuser`@`localhost` IDENTIFIED BY PASSWORD '_C85F42CED428CAE393E47738770729D0657BB541' |
+| GRANT ALL PRIVILEGES ON `nisse`._ TO `pythonuser`@`localhost`|
+| GRANT ALL PRIVILEGES ON `adjectives`.\* TO `pythonuser`@`localhost` |
 
 ### Complete user-generation
 
@@ -164,8 +159,6 @@ DESCRIBE adjectives;
 ```
 
 #### It should look like this, you can now `QUIT;`, `EXIT;` or `Ctrl + D` to get out of the terminal, and close it
-
-![Database schema showing adjectives table with three columns: id (auto-increment primary key), adjective (varchar), and counter (int)](images/database_image.png "How the database should look like")
 
 | Field     |    Type     | Null | Key | Default |          Extra |
 | --------- | :---------: | ---: | --: | ------: | -------------: |
