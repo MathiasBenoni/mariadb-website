@@ -163,8 +163,8 @@ DESCRIBE adjectives;
 
 #### It should look like this, you can now `QUIT;`, `EXIT;` or `Ctrl + D` to get out of the terminal, and close it
 
-[logo]: /mariadb/images/database_image.png "Logo Title Text 2"
+[logo]: /mariadb/images/database_image.png "Test2"
 
-[alt text](logo "Logo Title Text 1")
+![alt text](logo "Test1")
 
 ![alt text][logo]
