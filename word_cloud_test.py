@@ -1,18 +1,22 @@
-from wordcloud import WordCloud
+from wordcloud import STOPWORDS, WordCloud
 import numpy as np
 import matplotlib.pyplot as plt
-import PIL.Image
+from PIL import Image
 
 text = open("text.txt", 'r').read()
 
 
-python_mask = np.array(PIL.Image.open("images/python_logo.png"))
+mask_image = Image.open("images/joker.png")
 
+python_mask = np.array(mask_image)
 
-wc = WordCloud(mask = python_mask, 
-               background_color = "white").generate(text)
+wc = WordCloud(stopwords=STOPWORDS, 
+               mask = python_mask, 
+               background_color = "white",
+               max_words = 2000,
+               relative_scaling = 0.5).generate(text)
 
-plt.imshow(wc)
-plt.grid("off")
-plt.axis("off")
-plt.show()
+# Save the wordcloud as an image
+
+mask_image = mask_image.resize((800, 800))
+wc.to_file("images/output_wordcloud.png")
