@@ -6,6 +6,8 @@ This website uses python as backend. `app.py` is connected to the HTML. `app.py`
 
 Also planned to do a wordcloud for all the adjectives, instead of just a word
 
+## TODO's
+
 # The installation
 
 ## Create an environment
@@ -164,3 +166,9 @@ DESCRIBE adjectives;
 #### It should look like this, you can now `QUIT;`, `EXIT;` or `Ctrl + D` to get out of the terminal, and close it
 
 ![Database schema showing adjectives table with three columns: id (auto-increment primary key), adjective (varchar), and counter (int)](images/database_image.png "How the database should look like")
+
+| Field     |    Type     | Null | Key | Default |          Extra |
+| --------- | :---------: | ---: | --: | ------: | -------------: |
+| id        |   int(11)   |   NO | PRI |    NULL | auto_increment |
+| adjective | varchar(50) |   NO |     |    NULL |                |
+| counter   |   int(11)   |   NO |     |    NULL |                |
