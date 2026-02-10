@@ -1,7 +1,4 @@
-from math import e
-import string
 from flask import *
-from more_itertools import adjacent
 from mariabd_python import *
 
 app = Flask(__name__)
@@ -17,21 +14,23 @@ def contains_illegal_characters(string):
 
 @app.route("/")
 def index():
+    bigger_number = 0
+    max_index = 0
     adjectives_list = get_adjectives()
+    
     if adjectives_list:
-        for element in adjectives_list:
-            if isinstance(adjectives_list[element], (int)):
-                #INT
-                pass
-            elif isinstance(adjectives_list[element], str):
-                # STRING
-                pass
-            
-
+        for i in range(len(adjectives_list)):
+            if isinstance(adjectives_list[i], int):
+                # INT
+                if adjectives_list[i] > bigger_number:
+                    bigger_number = adjectives_list[i]
+                    max_index = i 
+        
+        the_adjective = adjectives_list[max_index - 1].capitalize()
     else:
         the_adjective = "Nothing here yet"
 
-    return render_template("index.html", html_adjective_list = adjectives, the_adjective_html = the_adjective)
+    return render_template("index.html", html_adjective_list=adjectives_list, the_adjective_html=the_adjective)
 
 @app.route('/submit', methods=['POST'])
 def handle_data():
