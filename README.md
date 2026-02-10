@@ -163,4 +163,4 @@ DESCRIBE adjectives;
 
 #### It should look like this, you can now `QUIT;`, `EXIT;` or `Ctrl + D` to get out of the terminal, and close it
 
-![alt text](/mariadb/images/database_image.png "How the database should look like")
+![alt text](images/database_image.png "How the database should look like")
