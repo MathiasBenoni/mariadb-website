@@ -26,8 +26,6 @@ def get_adjectives():
     adjective_list_with_values = [item for row in results for item in row]
 
     print(adjective_list_with_values)
-
-
     
     cur.close()
     conn.close()
@@ -36,7 +34,16 @@ def get_adjectives():
 def write(x):
     conn = get_connection()
     cur = conn.cursor()
-    cur.execute('INSERT INTO adjectives (adjective) VALUES (?);', (x,))
+
+    cur.execute('SELECT adjective FROM adjectives;')
+    adjectives_already_in_database = [row[0] for row in cur.fetchall()]
+
+    if x in adjectives_already_in_database:
+        cur.execute('UPDATE adjectives SET counter = counter + 1 WHERE adjective = ?;', (x,))
+    else:
+
+        cur.execute('INSERT INTO adjectives (adjective, counter) VALUES (?, 1);', (x,))
+
     conn.commit()
     cur.close()
     conn.close()
