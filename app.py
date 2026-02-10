@@ -1,4 +1,7 @@
+from math import e
+import string
 from flask import *
+from more_itertools import adjacent
 from mariabd_python import *
 
 app = Flask(__name__)
@@ -10,15 +13,21 @@ def most_common(lst):
 def contains_illegal_characters(string):
     illegal_chars = {' ', ',', '.', '-', '_', ':', ';', '<', '>', '!', '#', '&', '()', '=', '?', '+'}
 
-
-
     return any(char in illegal_chars for char in string)
 
 @app.route("/")
 def index():
-    adjectives = get_adjectives()
-    if adjectives:
-        the_adjective = most_common(adjectives).capitalize()
+    adjectives_list = get_adjectives()
+    if adjectives_list:
+        for element in adjectives_list:
+            if isinstance(adjectives_list[element], (int)):
+                #INT
+                pass
+            elif isinstance(adjectives_list[element], str):
+                # STRING
+                pass
+            
+
     else:
         the_adjective = "Nothing here yet"
 

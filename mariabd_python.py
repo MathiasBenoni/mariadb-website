@@ -1,6 +1,8 @@
 import mariadb
 import sys
 
+from more_itertools import flatten
+
 def get_connection():
     try:
         conn = mariadb.connect(
@@ -18,19 +20,18 @@ def get_connection():
 def get_adjectives():
     conn = get_connection()
     cur = conn.cursor()
-    cur.execute('SELECT adjective FROM adjectives;')
-    gotten_adjectives = []
+    cur.execute('SELECT adjective, counter FROM adjectives;')
+    results = cur.fetchall()
 
-    for row in cur:
-        text = ''
-        for value in row:
-            text += str(value)
-            gotten_adjectives.append(text)
-        print(text)
+    adjective_list_with_values = [item for row in results for item in row]
+
+    print(adjective_list_with_values)
+
+
     
     cur.close()
     conn.close()
-    return gotten_adjectives
+    return adjective_list_with_values
 
 def write(x):
     conn = get_connection()
