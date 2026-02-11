@@ -41,7 +41,7 @@ def make_cloud(x):
                     min_font_size=2).generate(text)
 
         wc.recolor(color_func=colourmap)
-        wc.to_file("static/images/output_wordcloud_dark.png")
+        wc.to_file("static/images/cloud_dark.png")
 
         # Light version
         wc = WordCloud(mask=python_mask,
@@ -50,6 +50,6 @@ def make_cloud(x):
                     min_font_size=2).generate(text)
 
         wc.recolor(color_func=colourmap)
-        wc.to_file("static/images/output_wordcloud_light.png")
+        wc.to_file("static/images/cloud_light.png")
     else:
         return "NOPE"
