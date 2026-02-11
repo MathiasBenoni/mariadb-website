@@ -1,3 +1,4 @@
+from pickle import NONE
 from flask import *
 from mariabd_python import *
 from word_cloud_test import make_cloud
@@ -26,10 +27,13 @@ def index():
                     bigger_number = adjectives_list[i]
                     max_index = i 
         the_adjective = adjectives_list[max_index - 1].capitalize()
+        
+        make_cloud(adjectives_list)
+
     else:
         the_adjective = "Nothing here yet"
-
-    make_cloud(adjectives_list)
+  
+    
 
     return render_template("index.html", html_adjective_list=adjectives_list, the_adjective_html=the_adjective)
 
