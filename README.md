@@ -9,8 +9,15 @@ Also planned to do a wordcloud for all the adjectives, instead of just a word
 ## TODO's
 
 - [x] Update database
-- [ ] wordcloud
+- [x] wordcloud (both for light- and dark mode)
+- [ ] Dark / light mode
 - [ ] Styling
+- [ ] Get some other feature in
+
+### Far fetched ideas
+
+- [ ] Docker
+- [ ] AI to accept only adjectives
 
 # The installation
 
@@ -169,3 +176,12 @@ DESCRIBE adjectives;
 | id        |   int(11)   |   NO | PRI |    NULL | auto_increment |
 | adjective | varchar(50) |   NO |     |    NULL |                |
 | counter   |   int(11)   |   NO |     |    NULL |                |
+
+## Install wordcloud
+
+Wordcloud is the program that makes them word-pictures. Run the commands bellow in the terminal
+
+```
+pip install wordcloud
+pip install nympy matplotlib pillow
+```

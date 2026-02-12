@@ -1,7 +1,7 @@
 from pickle import NONE
 from flask import *
 from mariabd_python import *
-from word_cloud_test import make_cloud
+from word_cloud_python import make_cloud
 app = Flask(__name__)
 
 

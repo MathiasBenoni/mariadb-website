@@ -1,10 +1,12 @@
 import matplotlib
 matplotlib.use('Agg')  # Use non-interactive backend
-
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
 import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
+
+size_x = 200
+size_y = 200
 
 separator = ' '
 
@@ -14,7 +16,7 @@ def make_cloud(x):
         for i, element in enumerate(x):
             if isinstance(element, str):
                 x[i] = element.capitalize()
-        print("HERE ", x)
+
 
         words = []
         for i in range(0, len(x), 2):  # Step by 2 to get pairs
@@ -24,9 +26,10 @@ def make_cloud(x):
         
         text = separator.join(words)
         
+
         # Load and resize FIRST
         mask_image = Image.open("images/python.jpeg")
-        mask_image = mask_image.resize((500, 500))
+        mask_image = mask_image.resize((size_x, size_y))
 
         # Convert to numpy array
         python_mask = np.array(mask_image)
@@ -38,6 +41,8 @@ def make_cloud(x):
         wc = WordCloud(mask=python_mask,
                     background_color="black",
                     max_words=2000,
+                    width=size_x,
+                    height=size_y,
                     min_font_size=2).generate(text)
 
         wc.recolor(color_func=colourmap)
@@ -47,6 +52,8 @@ def make_cloud(x):
         wc = WordCloud(mask=python_mask,
                     background_color="white",
                     max_words=2000,
+                    width=size_x,
+                    height=size_y,
                     min_font_size=2).generate(text)
 
         wc.recolor(color_func=colourmap)

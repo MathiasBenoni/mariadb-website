@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adjectives</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+  
 <body>
 
     <form action="/" method="post">
@@ -16,17 +18,19 @@
         <br>
         <button type="submit">Add</button>
     </form>
+    <br>
 
+      <h2>Thank you, the adjective you submitted was:</h2>
+      <br>
     <h1>{{ the_adjective_html }}</h1>
 
     <br>
     <br>
-
     <h2>{{ html_adjective_list }}</h2>
 
     <img src="{{ url_for('static', filename='images/cloud_light.png') }}" 
       alt="Wordcloud of the adjectives"  
-      height="500">
+      height="200">
 
     <script src="{{ url_for('static', filename='script.js') }}"></script>
 
