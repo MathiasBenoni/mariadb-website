@@ -23,7 +23,7 @@ Also planned to do a wordcloud for all the adjectives, instead of just a word
 
 ## Create an environment
 
-Create a project folder and a `.venv` folder within with this command:
+Create a project folder and a `.venv` folder within, with this command:
 
 ```
 mkdir myproject
@@ -34,7 +34,7 @@ python3 -m venv .venv
 ## Install Flask
 
 - Open a `terminal` or use the one in Visual Studio Code
-- Navigate to your project folder
+- Navigate to your project folder using `cd`
 - Run the command bellow to install Flask
 
 ```
