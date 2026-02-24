@@ -27,3 +27,7 @@ button {
 button:hover {
   background-color: var(--primary-hover);
 }
+
+.main_card {
+    background-color: var(--surface);
+}

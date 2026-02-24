@@ -14,27 +14,31 @@
 </head>
   
 <body>
+  <div class="main_card">
 
-    <form action="/" method="post">
-        <label for="adjective" class="text">Adjective:</label>
-        <br>
-        <br>
-        <input type="text" id="adjective" name="adjective">
-        <br>
-        <br>
-        <button type="submit">Add</button>
-    </form>
-    <br>
+    <div class="margin_container">
+      <form action="/" method="post">
+          <label for="adjective" class="text">Adjective:</label>
+          <br>
+          <br>
+          <input type="text" id="adjective" name="adjective">
+          <br>
+          <br>
+          <button type="submit">Add</button>
+      </form>
+      <br>
 
-    <button onclick="toggleTheme()">Switch Theme</button>
+      <button onclick="toggleTheme()">Switch Theme</button>
 
-      <h2 class="text">Thank you, here are some other things that were said about this website:</h2>
+        <h2 class="text">Thank you, here are some other things that were said about this website:</h2>
 
-    <img id="wordcloud" src="{{ url_for('static', filename='images/cloud_light.png') }}" 
-      alt="Wordcloud of the adjectives"  
-      height="200">
+      <img id="wordcloud" src="{{ url_for('static', filename='images/cloud_light.png') }}"
+        alt="Wordcloud of the adjectives"  
+        height="200">
 
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+      <script src="{{ url_for('static', filename='script.js') }}"></script>
 
+      </div>
+    </div>
 </body>
 </html>
