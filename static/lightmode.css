@@ -1,6 +1,28 @@
-body {
-    background-color: bisque;
+:root {
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --text: #222222;
+  --muted: #666666;
+  --primary: #7c3aed;
+  --primary-hover: #6d28d9;
+  --border: #e2e8f0;
 }
-.text {
-    color: black;
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+}
+
+form {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+}
+
+button {
+  background-color: var(--primary);
+  color: white;
+}
+
+button:hover {
+  background-color: var(--primary-hover);
 }
