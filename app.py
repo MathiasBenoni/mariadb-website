@@ -9,7 +9,7 @@ def most_common(lst):
     return max(set(lst), key=lst.count)
 
 def contains_illegal_characters(string):
-    illegal_chars = {' ', ',', '.', '-', '_', ':', ';', '<', '>', '!', '#', '&', '()', '=', '?', '+'}
+    illegal_chars = {' ', ',', '.', '-', '_', ':', ';', '<', '>', '!', '#', '&', '()', '=', '?', '+', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'}
 
     return any(char in illegal_chars for char in string)
 

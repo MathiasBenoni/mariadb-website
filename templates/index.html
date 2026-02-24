@@ -5,12 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adjectives</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <link 
+    id="theme-style"
+    rel="stylesheet"
+    href="{{ url_for('static', filename='lightmode.css') }}">
+
 </head>
   
 <body>
 
     <form action="/" method="post">
-        <label for="adjective">Adjective:</label>
+        <label for="adjective" class="text">Adjective:</label>
         <br>
         <br>
         <input type="text" id="adjective" name="adjective">
@@ -20,13 +26,12 @@
     </form>
     <br>
 
-      <h2>Thank you, the adjective you submitted was:</h2>
-      <br>
-    <h1>{{ the_adjective_html }}</h1>
+    <button onclick="toggleTheme()">Switch Theme</button>
 
+      <h2 class="text">Thank you, here are some other things that were said about this website:</h2>
     <br>
     <br>
-    <h2>{{ html_adjective_list }}</h2>
+    <h2 class="text">{{ html_adjective_list }}</h2>
 
     <img src="{{ url_for('static', filename='images/cloud_light.png') }}" 
       alt="Wordcloud of the adjectives"  
