@@ -1,3 +1,5 @@
+from os import read
+
 import matplotlib
 matplotlib.use('Agg')  # Use non-interactive backend
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
@@ -5,30 +7,25 @@ import numpy as np
 import matplotlib.pyplot as plt
 from PIL import Image
 
-size_x = 200
-size_y = 200
+size_x = 400
+size_y = 400
 
 separator = ' '
 
 def make_cloud(x):
     if x:
-        # x is [adjective_1, counter_1, adjective_2, counter_2, ...]
-        for i, element in enumerate(x):
-            if isinstance(element, str):
-                x[i] = element.capitalize()
+        words = [
+            adj.capitalize()
+            for i in range(0, len(x), 2)
+            for adj in [x[i]] * x[i + 1]
+        ]
 
-
-        words = []
-        for i in range(0, len(x), 2):  # Step by 2 to get pairs
-            adjective = x[i]           # Get adjective (string)
-            counter = x[i + 1]         # Get counter (int)
-            words.extend([adjective] * counter)  # Repeat adjective 'counter' times
         
         text = separator.join(words)
-        
+        #text = open("text.txt", 'r').read()
 
         # Load and resize FIRST
-        mask_image = Image.open("images/python.jpeg")
+        mask_image = Image.open("images/github.png")
         mask_image = mask_image.resize((size_x, size_y))
 
         # Convert to numpy array

@@ -34,3 +34,10 @@ body {
 .text {
     font-family: "Aldo";
 }
+img {
+    border-radius: 10%;
+}
+
+form {
+    padding: 10px;
+}

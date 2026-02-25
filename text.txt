@@ -1,28 +1,216 @@
-attractive
-bald
-beautiful
-chubby
-clean
-dazzling
-drab
-elegant
-fancy
-fit
-flabby
-glamorous
-gorgeous
-handsome
-long
-magnificent
-muscular
-plain
-plump
-quaint
-scruffy
-shapely
-short
-skinny
-stocky
-ugly
-unkempt
-unsightly
+Balatro[a] is a poker-themed roguelike deck-building game developed by solo developer LocalThunk, and published by Playstack. It was released for Nintendo Switch, PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S on February 20, 2024, with a port to macOS on March 1. Ports for Android and iOS were released on September 26, 2024. In the game, the player must score a certain number of points by playing poker hands from a starting 52-card deck, with a limited number of hands and discards each round.
+
+The game was developed over a two-and-a-half year period by sole developer LocalThunk, inspired by the card game Big Two and the roguelike video game Luck Be a Landlord. Initially, LocalThunk had only treated Balatro as a side project to put on a résumé, not anticipating the success of the game.[1]
+
+Balatro has received universal acclaim from game critics,[2][3] selling more than 5 million copies by January 2025.[4] Along with several other awards and nominations, Balatro was named Game of the Year at the 25th Game Developers Choice Awards and nominated for the top prize at The Game Awards 2024, the 28th Annual D.I.C.E. Awards, and the 21st British Academy Games Awards.
+
+Gameplay
+Playthrough
+Balatro is a singleplayer roguelike deck-building game based on the rules of poker. The player chooses a deck, each with unique effects and cards, before each playthrough or "run". A run is divided into antes, each with three blinds of increasing difficulty. During a "round" against a blind, the player must use their limited number of hands and discards to play poker hands, and attempt to score the required number of chips (points).[5][6] To defeat blinds more easily, the player may purchase various cards which change the rules of the game or provide an advantage.[7][6] These items are bought in a shop in between rounds with an internal in-game currency.[5][8][9]
+
+Blinds
+Blinds, the obstacles the player must defeat in Balatro, have three major types: Small Blind, Big Blind, and Boss Blind. Small and Big Blinds can either be skipped or played. When skipping a blind, the player forgoes the cash rewards of defeating the blind and an opportunity to use the shop but is rewarded with a tag, granting special rewards. Most tags give some benefit upon entering the next shop, such as free cards or booster packs, but some effects are instant or apply when other criteria are met. Each type of Boss Blind has a special ability, such as disabling certain cards or limiting the player's hands or discards.[10][11] Ante 8—as well as all antes that are a multiple of 8—have a "Showdown Blind" in place of a Boss Blind, which selects from one of five special types which do not appear in any other circumstance.
+
+Antes and rounds
+Each ante consists of three rounds, one against a Small Blind, one against a Big Blind, and the final round against a Boss Blind, which allows the player to progress to the next ante. In each round, the player has a limited number of hands within which they must beat a target score, as well as a limited number of discards with which they may replace up to five cards in their hand with different ones. The game ends if the player runs out of hands or cards to play before reaching the target score.[12][13][14][11][10][9]
+
+During a round, the player draws playing cards from their deck, initially starting with a standard 52-card deck, while cards can be added, modified, and destroyed throughout the run. The player then selects up to five cards, with the objective of forming poker hands to score points.[14][15][16] The hand's base value is calculated and turned into "Chips", which are then multiplied by "Mult", which increases depending on cards, hands, and jokers held by the player.[14] Joker cards affect the game in various ways, such as offering additional Chips or Mult when conditions are met or changing how certain poker hands can be played.[7][17][15][14][9]
+
+
+A round of Balatro against a Big Blind with a Popcorn joker card.
+Upon defeating a Blind, the player is awarded with in-game cash ($), and presented with a shop. Here, the player may use their cash to purchase items, such as booster packs, Jokers, and a voucher which grants an immediate permanent upgrade (ex. modifying shop contents, granting an additional hand or discard).[5][10] It is possible to play until ante 39 in endless mode at which point the amount of required chips, stored under double-precision floating-point format, overflows to infinity, which get stored as NaN under such number format.[b] Because all numbers (including NaN) will always be compared as unordered (a relation separate from less than, equal to, or greater) against NaN, the player score cannot be equal to or greater than NaN, causing further progression to be impossible.[c][18][19]
+
+End of a run
+The player wins a run by completing ante 8—defeating the first Showdown Blind—though the player can continue playing in endless mode.[7] Running out of hands or cards without hitting the score required during a round ends the run. If the player has not completed ante 8 when the game ends, the player has lost. In endless mode, these conditions still cause the game to end, though the player still won by completing ante 8.
+
+Cards
+
+The three additional poker hands available when the deck is modified
+Jokers, special cards which the player holds separately from their deck, are the primary means by which players can alter their scoring in the game, among other effects. The game was released with 150 Joker cards.[4] Many Jokers provide Chips or Mult bonuses based on certain conditions, and some provide Mult multipliers, multiplying the player's Mult. Jokers have a wide range of abilities including rewarding money, creating or duplicating cards, or modifying the player's amount of hands and discards. Jokers often require certain conditions to be met for their abilities to be triggered, or used to their full potential. Jokers can be found with or upgraded to have variants like Foil, Holographic, Polychrome, which affect the player's Chips or Mult, as well as the Negative modifier which grants an additional slot for Joker storage, effectively making the Joker occupy no space. Part of the strategy of Balatro is filling one's limited Joker slots with Jokers that have interactions with each other and other cards to greatly increase scoring opportunities.[4]
+
+Consumables
+Players can modify their deck of playing cards through various means, which can be used to improve the odds of drawing specific hands, or improve the score output of certain cards. Additional playing cards can be obtained through booster packs at the shop. Existing cards can also be modified, destroyed or copied using Tarot cards and Spectral cards. Utilizing these, it is therefore possible to play non-traditional poker hands such as Five of a Kind, Flush House (full house of all the same suit), and Flush Five (five of the same suit and rank).[6][10]
+
+Major Arcana from the cartomantic Tarot deck provide various one-time effects, such as changing cards to different playing card suits, enhancing them to provide bonuses when played, or destroying cards.[7][14] Spectral cards behave similarly, though provide stronger effects, such as creating copies of a card, applying upgrade variants to Jokers and playing cards, or modifying the player's cash in exchange for a negative or positive effect.[14] Planet cards raise the level of a poker hand, increasing their base Chips and Mult values when played. Each planet card applies to a different hand depending on its type, and upgrades that hand for the duration of the run.[20]
+
+Decks
+The deck of playing cards that the player chooses at the beginning of a run also has its own effects; the player starts out with a "starter" series of decks, and completes runs to unlock new ones.[7] Completing runs also unlocks "stakes" for the deck used, which add more difficult conditions to the run.[7][21] New special cards and vouchers can be unlocked for future runs by meeting certain conditions.[10]
+
+Modding
+Balatro has significant support for modification primarily through the third-party mod loader Steammodded. Many mods exist for Balatro; one famous example of this is the Cryptid mod, which adds over 120 Jokers and is designed to be intentionally unbalanced.[22] Another popular mod for Balatro is the Multiplayer mod, which novelly enables players to face off against another player during a Nemesis Blind, in which whoever scores the highest is able to take a life from their opponent.[23]
+
+Development
+Balatro was developed by LocalThunk, an anonymous solo developer based in Saskatchewan, Canada.[24] In an interview, he said that he mostly plays online competitive games, and that he ponders roguelike games more than actually playing them.[25] Despite the game's theme, LocalThunk said he does not play poker, nor does he want the game to be used for gambling by casinos and players.[26]
+
+Development began in 2021, two-and-a-half years before release, initially intended to be one of several small games that were shared with friends.[27][1] The initial idea was an online version of the Cantonese card game Big Two, which has players playing a number of cards to create poker-like hands.[28] After seeing the number of roguelike deckbuilders on Steam, and watching a Twitch stream of Northernlion playing Luck Be a Landlord, a slot machine-themed roguelike,[1][29] he was inspired to turn his Big Two clone into a singleplayer roguelike deckbuilder without online play. According to LocalThunk, he avoided playing deckbuilders to avoid taking ideas from these games, and had only played Slay the Spire near the end of development to understand how it implemented its control scheme.[1] He at one point considered the name Joker Poker for the game, before settling on Balatro, an Ancient Roman term for a professional jester or buffoon.[30]
+
+On using the standard 52 playing card deck as a base LocalThunk said, "it's this shared cultural game design tool that has evolved over hundreds of years", and on the game's success was quoted as being partly "because you're borrowing from this really tried-and-true tool."[28]
+
+The soundtrack for Balatro was written and produced by LouisF, a freelance Fiverr artist. The composer was contacted in March 2023, and the music was released the same month. In his published timeline of the game's production, LocalThunk noted that it was the only money that he planned to spend during the development of Balatro.[31]
+
+A very early version of the game was circulated among his friends, who gave positive reviews after months of playing.[32] About a year prior to release, LocalThunk quit his day job to focus on finishing Balatro "to put on a résumé".[1] He signed a publishing contract with PlayStack, and with their help developed a launch campaign around beta releases and promotion via major video game streamers.[33] LocalThunk used player feedback from the betas for additional features in the final version of the game, including the addition of boss battles.[1]
+
+Balatro was programmed in Lua with the Löve game framework.[34] LocalThunk's pseudonym derives from the keyword "local" used to define variables and "Thunk", a common variable name in his partner's projects.[32]
+
+Etymology
+The game is named after the Latin word for "professional jester or buffoon", which is pronounced /ˈbɑːlɑːtroʊ/ BAH-lah-troh.[35] Developer LocalThunk said that its pronunciation can be "whatever makes people happy,"[35] though he personally pronounces it /ˈbælətroʊ/ BA-luh-troh, as does the narrator in the game's launch trailer.[36] Many players and YouTubers pronounce the title buh-LAH-troh with stress on the second syllable.[37]
+
+Release
+In 2023, prior to release, the game became available as a demo. It was removed by LocalThunk on January 1, 2024, and was brought back on January 25, with the new version containing 40 new Jokers, new bosses, and booster packs. The new version was uploaded alongside a new trailer and a release date for the full version of the game, February 20, 2024.[21] In April 2024, the game was made easier with an experimental balance patch, 1.0.1c.[38]
+
+Shortly after the game's release, Balatro's PEGI rating was changed from 3+ to 18+ for "prominent gambling imagery" due to PEGI's strict rules on portraying gambling, causing the game to be temporarily removed from sale in certain territories. Publisher Playstack stated that they had discussed the game's content with PEGI prior to release (causing its initial 18+ rating to be lowered to 3+) and that, while being based on poker, the game does not portray any form of gambling, and intended to appeal the re-rating.[39] LocalThunk criticised the rating change saying, "Maybe I should add microtransactions/loot boxes/real gambling to lower that rating to 3+ like EA Sports FC".[40] The rating reprisal was successfully appealed in February 2025, and along with Luck be a Landlord, Balatro was reclassified with a 12+ rating, recognizing that the fantasy elements of the game distinguished it from gambling. PEGI has stated they will introduce more granular classification rules for future games involving gambling-like elements.[41] After YouTube changed its policies in March 2025, many Balatro videos were marked as 18+ for "depictions or promotions of online casino sites or apps," blocking these videos from child YouTube accounts.[42]
+
+LocalThunk and Playstack confirmed plans for ports to Android and iOS mobile devices in March 2024.[43] The ports released on September 26, 2024, including a Balatro+ version for Apple Arcade.[44] The ports grossed $1 million in the first week and $4.4 million in 2 months.[45] Various pieces of official merchandise have also been released; A physical deck of playing cards using Balatro's pixel art graphics and a 2026 calendar (featuring photographs of Ben Starr portraying various jokers) were released by Fangamer,[46][47] numerous plushes, pins, and keychains were released by Makeship,[48] and various t-shirts with mascot Jimbo and various other cards are sold by Playstack.[49][50]
+
+Four free "Friends of Jimbo" updates, adding interchangeable cosmetic packs (changing the appearance of the face cards) featuring crossovers with other video games, were released on August 27, October 24, December 12, 2024, and February 24, 2025, respectively. The first update features crossovers with The Witcher 3, Vampire Survivors, Dave the Diver and Among Us,[51] the second update features crossovers with Cyberpunk 2077, The Binding of Isaac, Slay the Spire and Stardew Valley,[52][53] the third update features crossovers with Divinity: Original Sin II, Shovel Knight, Potion Craft, Enter the Gungeon, Cult of the Lamb, Don't Starve, 1000xResist and Warframe,[54] and the fourth update features crossovers with Critical Role, Bugsnax, Sid Meier's Civilization VII, Rust, Assassin's Creed, Slay the Princess, Dead by Daylight and Fallout.[55]
+
+LocalThunk had planned to release a major update to Balatro during 2025, but by September 2025, opted to push that to 2026, stating his desire to continue to keep the game's development as his hobby and avoid crunch.[56]
+
+Appearances in other games
+Balatro-themed content has been added to numerous other games through official collaborations, including:
+
+Dungeons & Degenerate Gamblers · Features Jimbo the Joker as a card.[57][58]
+Dave the Diver · A free update released on October 24, 2024, added a quest where several characters could challenge the player with a condensed version of Balatro, dubbed “Jimbo's Game”.[59]
+Cyberpunk 2077 · A large update released on December 10, 2024, added a quest where a character named Jim B. tasks the player with removing graffiti around the city featuring designs of numerous jokers. Upon completion the player is rewarded a white T-shirt with a joker design not seen in Balatro.[60]
+Little Kitty, Big City · A free update released on February 25, 2025, adding Jimbo's jester cap as a wearable hat.[61]
+Dying Light 2 · A free update on June 26, 2025, added quests to unlock several Balatro-themed items for free, including a Jimbo costume, ceremonial dagger knife, and a charm that would grant various abilities based on several jokers.[62]
+Rusty's Retirement · A Balatro-themed update released on August 7, 2025, added several Balatro-themed structures and several jokers that can inhabit your farm.[63]
+Vampire Survivors · Includes a Balatro themed level along with characters and weapons based on the game in a free Ante Chamber DLC pack released on October 28, 2025.[64]
+Dead by Daylight · A head cosmetic for the killer The Unknown based on the Madness joker was released for free on February 20, 2026.[65]
+Reception
+Reception
+Aggregate scores
+Aggregator	Score
+Metacritic	PC: 90/100[2]
+XBXS: 95/100[66]
+PS5: 90/100[67]
+NS: 90/100[68]
+OpenCritic	100% recommend[3]
+Review scores
+Publication	Score
+Eurogamer	4/5[9]
+Game Informer	9.5/10[6]
+GameSpot	9/10[11]
+Hardcore Gamer	5/5[69]
+IGN	9/10[7]
+Nintendo Life	10/10[70]
+Nintendo World Report	9/10[14]
+PC Gamer (US)	91%[12]
+Push Square	9/10[71]
+Shacknews	9/10[72]
+Balatro has received "universal acclaim" according to review aggregator website Metacritic.[2][66][67][68] OpenCritic, another aggregator, said that 100% of critics recommend the game.[3]
+
+The game's playability has received praise from critics. Simon Cardy from IGN described it as "ludicrously fun" and "remarkably approachable,"[7] while Jordan Helm from Hardcore Gamer called it "addictive" and "expertly-crafted".[69] Writing for The Guardian, Keza MacDonald stated that "Balatro might be the best card game you will ever come across".[73]
+
+In addition, the game's roguelike elements have received positive reviews. Abbie Stone from PC Gamer described gameplay as "strategizing your way to success,"[12] and Alessandro Barbosa from GameSpot called each run "surprisingly fresh."[11] Chris Allnutt writing in Financial Times praised the "wonderfully retro VCR-style visuals, lo-fi music and irreverent sound effects."[74]
+
+Charlie Brooker, the creator of Black Mirror, called it "possibly the most addictive thing ever created" and that once it was released for mobile devices, "humankind's activity is going to drop about 25%";[75] Balatro was subsequently briefly shown in the "Hotel Reverie" episode of Black Mirror's seventh season, released in April 2025.[76] Film director James Gunn called Balatro a "great game", and spent much of the downtime during production of Superman playing the game.[77]
+
+With the success of Balatro, LocalThunk kept to a low profile, not wanting much attention on his real-world identity and avoiding the stress that would come with it.[32] He has also used the attention drawn to Balatro to highlight other indie titles released near the same time,[78] including naming Animal Well, Dungeons & Degenerate Gamblers, Arco, Nova Drift, Ballionaire, and Mouthwashing for his "Golden Thunk Awards".[79] While LocalThunk and his partner had been present at the Game Awards, he told no one else who they were, and opted to allow representatives from PlayStack to accept the awards Balatro won on his behalf.[4] A similar arrangement was made for the Game Developers Choice Awards, with PlayStack representatives accepting the awards for Balatro while LocalThunk remained anonymous at the event.[80] For the 21st British Academy Games Awards, LocalThunk was able to send actor Ben Starr, previously having played Jimbo the joker for live-action videos for the game, to accept his award.[81]
+
+Following its popularity, the game has inspired significant activity from the player community, including memes,[82] the integration of other games within it,[83] and an unofficial port to the Apple Watch developed in January 2025, called Wee Balatro, which is awaiting the author's approval.[84]
+
+Sales
+Within eight hours of release, the game had made over US$1 million in gross revenue according to publisher Playstack. Over one million copies were sold within the first month.[85] By January 2025, the game had surpassed 5 million copies, with around half of those coming after the mobile releases in September 2024, and does not account for those who downloaded the game via their Apple Arcade subscriptions.[4]
+
+Accolades
+Balatro received nominations for multiple accolades. In 2024 it won Golden Joystick Awards' "Best Indie Game" and "Breakthrough" awards.[86] At The Game Awards 2024, it won "Best Independent Game", "Best Debut Indie Game", and "Best Mobile Game";[87] it was also nominated for "Game of the Year", the first time a solo game project was nominated for the top honor.[88] It also received awards from the Academy of Interactive Arts & Sciences for "Outstanding Achievement for an Independent Game", "Strategy/Simulation Game of the Year", and "Mobile Game of the Year" at the 28th Annual D.I.C.E. Awards.[89]
+
+Year	Ceremony	Category	Result	Ref.
+2024	Golden Joystick Awards	Ultimate Game of the Year	Nominated	[90][91]
+Best Indie Game	Won
+Best Audio Design	Nominated
+PC Game of the Year	Nominated
+Breakthrough (Critic's Choice)	Won
+The Game Awards 2024	Game of the Year	Nominated	[87]
+Best Game Direction	Nominated
+Best Independent Game	Won
+Best Debut Indie Game	Won
+Best Mobile Game	Won
+The Steam Awards	Game of the Year	Nominated	[92]
+Most Innovative Gameplay	Nominated
+Best Game on Steam Deck	Nominated
+2025	New York Game Awards	Big Apple Award for Best Game of the Year	Nominated	[93]
+Off Broadway Award for Best Indie Game	Nominated
+28th Annual D.I.C.E. Awards	Game of the Year	Nominated	[94][89]
+Outstanding Achievement for an Independent Game	Won
+Outstanding Achievement in Game Design	Nominated
+Mobile Game of the Year	Won
+Strategy/Simulation Game of the Year	Won
+Independent Games Festival	Seumas McNally Grand Prize	Honorable mention	[95]
+Excellence in Design	Nominated
+Game Developers Choice Awards	Game of the Year	Won	[96][97]
+Best Audio	Honorable mention
+Best Debut	Won
+Best Design	Won
+Innovation Award	Won
+Best Visual Art	Honorable mention
+NAVGTR Awards 2024	Gameplay Design, New IP	Nominated	[98]
+Game, Puzzle	Won
+21st British Academy Games Awards	Best Game	Nominated	[99][100]
+Debut Game	Won
+Game Design	Nominated
+New Intellectual Property	Nominated
+Develop:Star Awards	Publishing Star (Playstack)	Won	[101]
+GEM Awards	GEMA Indie 2024	Won	[102][103]
+Best Strategy Game	Won
+Best Mobile Game	Won
+Apple Design Awards	Delight and Fun	Won	[104]
+Notes
+ /ˈbɑːlɑːtroʊ/ BAH-lah-troh or /ˈbælətroʊ/ BA-luh-troh; see § Etymology for more information.
+ Represented in the game as either "nan" or "naneinf" (NaN times ten to the power of infinity in E notation)
+ In video game jargon, this is known as a kill screen.
+References
+ Machkovech, Sam (February 22, 2024). "Exploring Balatro's hype, its ingenious twists on poker, and its mysterious creator". GamesRadar+. Archived from the original on August 11, 2024. Retrieved March 2, 2024.
+ "Balatro for PC Reviews". Metacritic. CBS Interactive. Retrieved February 23, 2024.
+ "Balatro Reviews". OpenCritic. OpenCritic Inc. February 25, 2024. Archived from the original on August 11, 2024. Retrieved March 1, 2024.
+ Kupferman, Steve (February 6, 2025). "Inside the stunning success of Balatro, the video game sensation made by an anonymous Canadian". The Globe and Mail. Retrieved February 8, 2025.
+ Morley, Grayson (February 27, 2024). "Balatro cast a magic spell that made me like math". Polygon. Archived from the original on August 17, 2024. Retrieved May 16, 2024.
+ Stewart, Marcus (February 28, 2024). "Balatro Review". Game Informer. Archived from the original on February 29, 2024. Retrieved March 1, 2024.
+ Cardy, Simon (March 8, 2024). "Balatro Review". IGN. Archived from the original on May 11, 2024. Retrieved May 16, 2024.
+ Nguyen, Kevin (February 26, 2024). "Two words: poker roguelike". The Verge. Archived from the original on May 16, 2024. Retrieved May 16, 2024.
+ Donlan, Christian (February 29, 2024). "Balatro review - near-infinite poker possibilities". Eurogamer. Archived from the original on August 7, 2024. Retrieved March 6, 2024.
+ Lada, Jenni (March 6, 2024). "Review: Balatro Will Improve (or Ruin) Your Life". Siliconera. Archived from the original on May 16, 2024. Retrieved May 16, 2024.
+ Barbosa, Alessandro (March 7, 2024). "Balatro Review - One More Blind". GameSpot. Archived from the original on November 16, 2024. Retrieved May 16, 2024.
+ Stone, Abbie (February 19, 2024). "Balatro review". PC Gamer. Archived from the original on August 1, 2024. Retrieved June 8, 2024.
+ MacDonald, Keza (February 27, 2024). "Balatro: this fiendish mashup of solitaire and poker has taken over my life". The Guardian. Retrieved May 16, 2024.
+ Orona, Alex (February 19, 2024). "Balatro (Switch) Review". Nintendo World Report. Archived from the original on August 3, 2024. Retrieved February 23, 2024.
+ Wood, Rhys (February 28, 2024). "Balatro review - jokers to the right". TechRadar. Archived from the original on May 16, 2024. Retrieved May 16, 2024.
+ Bernhard, Adrienne (August 24, 2017). "The Lost Origins of Playing-Card Symbols". The Atlantic. Retrieved May 16, 2024.
+ Stewart, Marcus (February 20, 2024). "Balatro Review - A Winning Hand". Game Informer. Archived from the original on February 29, 2024. Retrieved May 16, 2024.
+ Bolding, Jonathan (December 26, 2024). "Turns out that Balatro, like Tetris before it, can only be 'finished' by scoring so high it crashes the game". PC Gamer. Archived from the original on January 21, 2025. Retrieved January 13, 2025.
+ Sledge, Ben (October 13, 2024). "I Watched Someone Get An Infinite Balatro Score And I Think I've Seen God". The Gamer. Archived from the original on June 1, 2025. Retrieved June 1, 2025.
+ Strazd, Edward (November 27, 2024). "All Balatro Planet Cards, explained". dotesports.com. Archived from the original on March 21, 2025. Retrieved June 1, 2025.
+ Livingston, Christopher (January 25, 2024). "The demo for poker-based roguelike Balatro returns today with nearly 40 new jokers—plus a full release date in February". PC Gamer. Archived from the original on December 28, 2024. Retrieved May 18, 2024.
+ Rose, Daniella (August 28, 2025). "The best Balatro mods 2025". PCGamesN. Retrieved October 23, 2025.
+ Allsop, Ken (February 28, 2025). "2024's greatest roguelike has been completely transformed by a magnificent multiplayer mod". PCGamesN. Retrieved October 23, 2025.
+ "Secretive game developer codes hit 'Balatro' in Canadian prairie province". France24. December 22, 2024. Retrieved January 6, 2025.
+ Holmes, Mike (March 7, 2024). "Balatro Interview - LocalThunk on an "indie take on solitaire with a poker coat of paint"". Rogueliker. Archived from the original on December 13, 2024. Retrieved December 13, 2024.
+ Taylor, Mollie (August 6, 2024). "'I hate the thought of Balatro becoming a true gambling game': LocalThunk is making sure casinos can't get their hands on his game even after he dies by literally writing it into his will". PC Gamer. Archived from the original on December 13, 2024. Retrieved December 13, 2024.
+ "Playstack Goes All In on Developer LocalThunk's 'Balatro' in Latest Publishing Deal". Games Press (Press release). Playstack. September 22, 2023. Archived from the original on February 4, 2024. Retrieved February 23, 2024.
+ Rivera, Joshua (October 1, 2024). "Shuffling Some Whimsy Into Poker and Blackjack". The New York Times. Archived from the original on December 27, 2024. Retrieved December 31, 2024.
+ Denzer, TJ (March 14, 2024). "Balatro was largely inspired by slot machine roguelike Luck Be a Landlord". Shacknews. Archived from the original on December 6, 2024. Retrieved December 13, 2024.
+ Stewart, Marcus (March 21, 2024). "Balatro Was Almost Called Joker Poker And Other Details From Its Creator". Game Informer. Archived from the original on March 21, 2024. Retrieved May 18, 2024.
+ "The Balatro Timeline". LocalThunk. March 6, 2025. Retrieved March 13, 2025.
+ White, Sam (December 12, 2024). "Balatro is the best game of 2024 – its anonymous creator may never release another". British GQ. Archived from the original on December 13, 2024. Retrieved December 13, 2024.
+ Schreier, Jason (February 7, 2025). "Maker of Smash Indie Hit 'Balatro' Talks About What's Next". Wall Street Journal. Retrieved February 8, 2025.
+ "LÖVE - Free 2D Game Engine". Love2D.org. Archived from the original on December 15, 2024. Retrieved December 15, 2024.
+ Carpenter, Nicole (February 29, 2024). "How do you pronounce Balatro? We asked the developer". Polygon. Vox Media. Archived from the original on February 29, 2024. Retrieved March 29, 2025.
+ Totilo, Stephen (March 26, 2025). "Pronunciation guide: How to say "Balatro"". Game File. Retrieved March 29, 2025.
+ Yang, George (March 27, 2025). "Here's How To Pronounce Balatro, Because You've Been Saying It Wrong (Sort Of)". GameSpot. Retrieved October 31, 2025.
+ O'Connor, Alice (April 8, 2024). "Balatro is getting just a little bit easier in the next patch, and you can try it now". Rock Paper Shotgun. Archived from the original on May 18, 2024. Retrieved May 18, 2024.
+ Wales, Matt (March 1, 2024). "Rogue-like poker hit Balatro pulled from sale in some countries due to unexpected ratings change". Eurogamer. Archived from the original on August 7, 2024. Retrieved March 1, 2024.
+ Peters, Jay (December 19, 2024). "Balatro's creator isn't happy about the game's 18-plus rating in Europe". The Verge. Archived from the original on January 16, 2025. Retrieved January 13, 2025.
+ Blake, Vikki (February 24, 2025). "Balatro wins formal appeal to reclassify poker game as PEGI 12". Eurogamer. Retrieved February 25, 2025.
+ Serin, Kaar (April 6, 2025). "First PEGI, now YouTube - Balatro's LocalThunk seems tired of his roguelike game being age restricted for gambling-related concerns". GamesRadar. Archived from the original on April 6, 2025. Retrieved April 6, 2025.
+ Hollister, Sean (March 15, 2024). "Smash hit Balatro is coming to iPhone and Android". The Verge. Archived from the original on March 15, 2024. Retrieved March 15, 2024.
+ Robinson, Andy (September 26, 2024). "Hit deck-builder Balatro is now available for mobile". Video Games Chronicle. Archived from the original on September 26, 2024. Retrieved October 25, 2024.
+ Astle, Aaron (November 26, 2024). "Balatro nears $4.4m on mobile amid a sudden spending surge". www.pocketgamer.biz. Archived from the original on November 27, 2024. Retrieved January 13, 2025.
+ Holt, Kris (December 4, 2024). "A physical deck of Balatro cards can soon be yours for $16". Engadget. Archived from the original on December 12, 2024. Retrieved December 4, 2024.
+ "This Balatro charity wall calendar is exactly the energy I need going into 2026". Engadget. November 4, 2025. Retrieved November 7, 2025.
+ "Balatro". Makeship. Retrieved November 7, 2025.
+ "Balatro". www.playbalatro.com. Retrieved May 31, 2025.
+ Reynolds, Ollie (September 23, 2024). "New Balatro Merch Adds Exclusive Abstract Joker Shirt". Nintendo Life. Retrieved July 2, 2025.
+ Chalk, Andy (August 27, 2024). "Geralt and Dave the Diver are in Balatro now". PC Gamer. Archived from the original on August 28, 2024. Retrieved August 28, 2024.
+ Romano, Sal (October 24, 2024). "Balatro 'Friends of Jimbo (Pack 2)' update now available". Gematsu. Archived from the original on November 26, 2024. Retrieved October 25, 2024.
+ Chalk, Andy (October 24, 2024). "Balatro adds new card backs from Stardew Valley, Cyberpunk 2077, Slay the Spire, and Binding of Isaac, and they're all free". PC Gamer. Retrieved October 25, 2024.
