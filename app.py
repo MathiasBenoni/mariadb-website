@@ -18,10 +18,15 @@ def contains_illegal_characters(string):
     return not all(char.isalpha() for char in string)
 
 def is_adjective(word):
-    doc = nlp(f"That website is so {word}.")
+    doc = nlp(f"That website is so {word}")
     for token in doc:
         if token.text == word:
             return token.pos_ == "ADJ"
+        else:
+            doc = nlp(f"This is {word}")
+            for token in doc:
+                if token.text == word:
+                    return token.pos_ == "ADJ"
     return False
 
 @app.route("/")
