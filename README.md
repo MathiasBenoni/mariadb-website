@@ -161,6 +161,17 @@ CREATE TABLE adjectives (
     adjective VARCHAR(50) NOT NULL,
     counter INT NOT NULL
 );
+
+---------------
+
+ALTER TABLE adjectives ADD UNIQUE (adjective);
+
+pip install spacy
+python -m spacy download en_core_web_sm
+
+-----------------
+
+
 ```
 
 #### To be extra sure, run this command

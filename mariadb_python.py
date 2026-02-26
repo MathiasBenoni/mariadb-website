@@ -1,8 +1,6 @@
 import mariadb
 import sys
 
-from more_itertools import flatten
-
 def get_connection():
     try:
         conn = mariadb.connect(
@@ -22,27 +20,21 @@ def get_adjectives():
     cur = conn.cursor()
     cur.execute('SELECT adjective, counter FROM adjectives;')
     results = cur.fetchall()
-
-    adjective_list_with_values = [item for row in results for item in row]
-
-    print(adjective_list_with_values)
-    
     cur.close()
     conn.close()
-    return adjective_list_with_values
+
+    # {"happy": 5, "pink": 3, "no": 2}
+    return {adjective: counter for adjective, counter in results}
 
 def write(x):
     conn = get_connection()
     cur = conn.cursor()
 
-    cur.execute('SELECT adjective FROM adjectives;')
-    adjectives_already_in_database = [row[0] for row in cur.fetchall()]
-
-    if x in adjectives_already_in_database:
-        cur.execute('UPDATE adjectives SET counter = counter + 1 WHERE adjective = ?;', (x,))
-    else:
-
-        cur.execute('INSERT INTO adjectives (adjective, counter) VALUES (?, 1);', (x,))
+    # Use INSERT ... ON DUPLICATE KEY UPDATE to avoid a separate SELECT
+    cur.execute('''
+        INSERT INTO adjectives (adjective, counter) VALUES (?, 1)
+        ON DUPLICATE KEY UPDATE counter = counter + 1;
+    ''', (x,))
 
     conn.commit()
     cur.close()
