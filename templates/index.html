@@ -9,6 +9,9 @@
         id="theme-style"
         rel="stylesheet"
         href="{{ url_for('static', filename='lightmode.css') }}">
+
+    <!-- Load script.js early so it can fix the theme before paint -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
   
 <body>
@@ -46,54 +49,6 @@
 
     </div>
   </div>
-
-  <script src="{{ url_for('static', filename='script.js') }}"></script>
-
-  <script>
-    /* ── Theme toggle ─────────────────────────────── */
-    let isDark = false;
-
-    function toggleTheme() {
-      isDark = !isDark;
-      const themeLink  = document.getElementById('theme-style');
-      const track      = document.getElementById('toggle-track');
-      const label      = document.getElementById('toggle-label');
-      const wordcloud  = document.getElementById('wordcloud');
-
-      if (isDark) {
-        themeLink.href = "{{ url_for('static', filename='darkmode.css') }}";
-        track.classList.add('active');
-        label.textContent = 'Dark';
-        if (wordcloud) wordcloud.src = "{{ url_for('static', filename='images/cloud_dark.png') }}";
-      } else {
-        themeLink.href = "{{ url_for('static', filename='lightmode.css') }}";
-        track.classList.remove('active');
-        label.textContent = 'Light';
-        if (wordcloud) wordcloud.src = "{{ url_for('static', filename='images/cloud_light.png') }}";
-      }
-    }
-
-    /* ── Scroll-hide header ───────────────────────── */
-    const header = document.getElementById('site-header');
-    let lastY = 0;
-    let ticking = false;
-
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const currentY = window.scrollY;
-          if (currentY > lastY && currentY > 60) {
-            header.classList.add('hidden');
-          } else {
-            header.classList.remove('hidden');
-          }
-          lastY = currentY;
-          ticking = false;
-        });
-        ticking = true;
-      }
-    }, { passive: true });
-  </script>
 
 </body>
 </html>
