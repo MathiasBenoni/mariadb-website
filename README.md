@@ -190,8 +190,8 @@ pip install nympy matplotlib pillow
 ## Other miscellaneous commands you need to run
 
 ```
-pip install spacy
-python -m spacy download en_core_web_sm
+pip install spacy # Only adjectives allowed
+python -m spacy download en_core_web_sm # Only a spesific liberary is required
 
-pip install flask-limiter
+pip install flask-limiter # This is for people not to spam your website
 ```
