@@ -5,41 +5,95 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adjectives</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
     <link 
-    id="theme-style"
-    rel="stylesheet"
-    href="{{ url_for('static', filename='lightmode.css') }}">
-
+        id="theme-style"
+        rel="stylesheet"
+        href="{{ url_for('static', filename='lightmode.css') }}">
 </head>
   
 <body>
-  <div class="main_card">
 
+  <!-- ── HEADER ─────────────────────────────────── -->
+  <header class="site-header" id="site-header">
+    <span class="site-header__title">Adjective Collector</span>
+
+    <div class="theme-toggle" onclick="toggleTheme()" title="Switch theme">
+      <span class="theme-toggle__label" id="toggle-label">Light</span>
+      <div class="theme-toggle__track" id="toggle-track">
+        <div class="theme-toggle__thumb">
+          <span class="theme-toggle__icon theme-toggle__icon--sun">&#9728;</span>
+          <span class="theme-toggle__icon theme-toggle__icon--moon">&#9789;</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── MAIN CARD ──────────────────────────────── -->
+  <div class="main_card">
     <div class="margin_container">
 
       <form action="/" method="post">
-          <label for="adjective" class="text">Adjective:</label>
-          <br>
-          <br>
-          <input type="text" id="adjective" name="adjective">
-          <br>
-          <br>
-          <button type="submit">Add</button>
+          <label for="adjective">Adjective:</label>
+          <input type="text" id="adjective" name="adjective" placeholder="e.g. luminous">
+          <button type="submit"><span>Add &rarr;</span></button>
       </form>
-      <br>
 
-      <button onclick="toggleTheme()">Switch Theme</button>
-
-        <h2 class="text">Thank you, here are some other things that were said about this website:</h2>
+      <h2 class="text">Thank you &mdash; here are some other things that were said about this website:</h2>
 
       <img id="wordcloud" src="{{ url_for('static', filename='images/cloud_light.png') }}"
         alt="Wordcloud of the adjectives"  
         height="400">
 
-      <script src="{{ url_for('static', filename='script.js') }}"></script>
-
-      </div>
     </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+  <script>
+    /* ── Theme toggle ─────────────────────────────── */
+    let isDark = false;
+
+    function toggleTheme() {
+      isDark = !isDark;
+      const themeLink  = document.getElementById('theme-style');
+      const track      = document.getElementById('toggle-track');
+      const label      = document.getElementById('toggle-label');
+      const wordcloud  = document.getElementById('wordcloud');
+
+      if (isDark) {
+        themeLink.href = "{{ url_for('static', filename='darkmode.css') }}";
+        track.classList.add('active');
+        label.textContent = 'Dark';
+        if (wordcloud) wordcloud.src = "{{ url_for('static', filename='images/cloud_dark.png') }}";
+      } else {
+        themeLink.href = "{{ url_for('static', filename='lightmode.css') }}";
+        track.classList.remove('active');
+        label.textContent = 'Light';
+        if (wordcloud) wordcloud.src = "{{ url_for('static', filename='images/cloud_light.png') }}";
+      }
+    }
+
+    /* ── Scroll-hide header ───────────────────────── */
+    const header = document.getElementById('site-header');
+    let lastY = 0;
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          const currentY = window.scrollY;
+          if (currentY > lastY && currentY > 60) {
+            header.classList.add('hidden');
+          } else {
+            header.classList.remove('hidden');
+          }
+          lastY = currentY;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
+  </script>
+
 </body>
 </html>

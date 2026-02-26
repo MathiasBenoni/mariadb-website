@@ -1,33 +1,107 @@
 :root {
-  --bg: #121212;
-  --surface: #1e1e1e;
-  --text: #e4e4e4;
-  --muted: #a1a1aa;
-  --primary: #a78bfa;
-  --primary-hover: #c4b5fd;
-  --border: #2a2a2a;
+    --bg: #111714;
+    --surface: #181f1b;
+    --card: #1d2620;
+    --text: #e8ede9;
+    --text-secondary: #c4cfc6;
+    --muted: #6b7d6e;
+    --accent: #7eeaa0;
+    --accent-shadow: rgba(126, 234, 160, 0.2);
+    --border: #2a3a2d;
+    --rule: #253028;
+    --input-bg: transparent;
+    --btn-text-hover: #111714;
+    --header-bg: rgba(17, 23, 20, 0.88);
+    --toggle-track: #253028;
+    --toggle-thumb: #e8ede9;
 }
-
 
 body {
-  background-color: var(--bg);
-  color: var(--text);
-}
-
-form {
-  background-color: var(--surface);
-  border: 1px solid var(--border);
-}
-
-button {
-  background-color: var(--primary);
-  color: white;
-}
-
-button:hover {
-  background-color: var(--primary-hover);
+    background-color: var(--bg);
+    color: var(--text);
+    /* Blackboard subtle texture */
+    background-image:
+        radial-gradient(ellipse 100% 60% at 50% 0%, rgba(30, 60, 35, 0.4), transparent 70%),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 60px,
+            rgba(126, 234, 160, 0.015) 60px,
+            rgba(126, 234, 160, 0.015) 61px
+        ),
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 60px,
+            rgba(126, 234, 160, 0.015) 60px,
+            rgba(126, 234, 160, 0.015) 61px
+        );
 }
 
 .main_card {
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    box-shadow:
+        0 0 0 1px rgba(126, 234, 160, 0.04),
+        0 4px 16px rgba(0, 0, 0, 0.4),
+        0 24px 64px rgba(0, 0, 0, 0.5),
+        /* Chalk-glow haze around the card */
+        0 0 60px rgba(126, 234, 160, 0.04),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    /* Slight texture to simulate board surface */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4'%3E%3Crect width='4' height='4' fill='%231d2620'/%3E%3Crect x='0' y='0' width='1' height='1' fill='rgba(255,255,255,0.012)'/%3E%3Crect x='2' y='2' width='1' height='1' fill='rgba(255,255,255,0.008)'/%3E%3C/svg%3E");
+}
+
+.main_card::before {
+    border-top-color: var(--accent);
+    border-left-color: var(--accent);
+    /* Chalk shimmer on corner */
+    filter: blur(0.3px);
+    opacity: 0.7;
+}
+
+.main_card::after {
+    border-bottom-color: var(--accent);
+    border-right-color: var(--accent);
+    filter: blur(0.3px);
+    opacity: 0.7;
+}
+
+/* Top edge chalk-light sweep */
+.main_card > .margin_container::before {
+    /* Override the label — chalk-white tone */
+    color: var(--muted);
+}
+
+form {
     background-color: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.03),
+        0 2px 16px rgba(0, 0, 0, 0.3);
+}
+
+input[type="text"] {
+    border-bottom-color: var(--border);
+    /* Chalk writing feel */
+    font-weight: 400;
+    text-shadow: 0 0 8px rgba(126, 234, 160, 0.15);
+}
+
+input[type="text"]:focus {
+    text-shadow: 0 0 12px rgba(126, 234, 160, 0.3);
+}
+
+img#wordcloud {
+    box-shadow:
+        0 4px 24px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(126, 234, 160, 0.06),
+        0 0 1px rgba(126, 234, 160, 0.15);
+    filter: saturate(0.85) brightness(0.95);
+}
+
+/* Glowing underline on hover for text elements */
+.text {
+    text-shadow: none;
+    transition: text-shadow 0.3s ease;
 }
