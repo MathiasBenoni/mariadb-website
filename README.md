@@ -158,18 +158,10 @@ USE adjectives;
 ```
 CREATE TABLE adjectives (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    adjective VARCHAR(50) NOT NULL,
+    adjective VARCHAR(50) NOT NULL UNIQUE,
     counter INT NOT NULL
 );
 
----------------
-
-ALTER TABLE adjectives ADD UNIQUE (adjective);
-
-pip install spacy
-python -m spacy download en_core_web_sm
-
-pip install flask-limiter
 
 -----------------
 
@@ -197,4 +189,13 @@ Wordcloud is the program that makes them word-pictures. Run the commands bellow 
 ```
 pip install wordcloud
 pip install nympy matplotlib pillow
+```
+
+## Other miscellaneous commands you need to run
+
+```
+pip install spacy
+python -m spacy download en_core_web_sm
+
+pip install flask-limiter
 ```
