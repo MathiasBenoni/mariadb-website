@@ -169,6 +169,8 @@ ALTER TABLE adjectives ADD UNIQUE (adjective);
 pip install spacy
 python -m spacy download en_core_web_sm
 
+pip install flask-limiter
+
 -----------------
 
 
