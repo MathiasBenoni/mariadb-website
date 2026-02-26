@@ -162,10 +162,6 @@ CREATE TABLE adjectives (
     counter INT NOT NULL
 );
 
-
------------------
-
-
 ```
 
 #### To be extra sure, run this command
