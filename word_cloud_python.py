@@ -30,7 +30,7 @@ def make_cloud(adjectives: dict):
         )
 
         # Dark version
-        wc = WordCloud(**shared_config, background_color="black")
+        wc = WordCloud(**shared_config, background_color="#1a1a1a")
         wc.generate_from_frequencies(frequencies)
         wc.recolor(color_func=colourmap)
         wc.to_file("static/images/cloud_dark.png")
@@ -49,7 +49,7 @@ def make_cloud(adjectives: dict):
         )
 
         # Light version
-        wc = WordCloud(**shared_config, background_color="white")
+        wc = WordCloud(**shared_config, background_color="#f5f0eb")
         wc.generate_from_frequencies(frequencies)
         wc.recolor(color_func=colourmap)
         wc.to_file("static/images/cloud_light.png")

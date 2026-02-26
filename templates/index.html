@@ -43,9 +43,11 @@
 
       <h2 class="text">Thank you &mdash; here are some other things that were said about this website:</h2>
 
-      <img id="wordcloud" src="{{ url_for('static', filename='images/cloud_light.png') }}"
-        alt="Wordcloud of the adjectives"  
-        height="400">
+      <figure class="wordcloud-frame">
+        <img id="wordcloud" src="{{ url_for('static', filename='images/cloud_light.png') }}"
+          alt="Wordcloud of the adjectives">
+        <figcaption>collected adjectives</figcaption>
+      </figure>
 
     </div>
   </div>

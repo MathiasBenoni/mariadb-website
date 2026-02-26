@@ -323,12 +323,63 @@ button:active {
     box-shadow: none;
 }
 
+/* ─── WORDCLOUD FRAME ─────────────────────────────── */
+.wordcloud-frame {
+    position: relative;
+    display: inline-block;
+    padding: 16px;
+    border-radius: 20px;
+    border: 1.5px solid var(--border);
+    background: var(--frame-bg);
+    box-shadow: var(--frame-shadow);
+    transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Rounded corner accent marks */
+.wordcloud-frame::before,
+.wordcloud-frame::after {
+    content: '';
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    border-radius: 0;
+    transition: border-color 0.4s ease;
+    pointer-events: none;
+}
+
+.wordcloud-frame::before {
+    top: 6px;
+    left: 6px;
+    border-top: 2px solid var(--accent);
+    border-left: 2px solid var(--accent);
+    border-radius: 8px 0 0 0;
+}
+
+.wordcloud-frame::after {
+    bottom: 6px;
+    right: 6px;
+    border-bottom: 2px solid var(--accent);
+    border-right: 2px solid var(--accent);
+    border-radius: 0 0 8px 0;
+}
+
 img#wordcloud {
-    border-radius: 3px;
+    border-radius: 12px;
     max-width: 100%;
     height: auto;
     display: block;
-    transition: box-shadow 0.4s ease, filter 0.4s ease;
+    transition: filter 0.4s ease;
+}
+
+figcaption {
+    text-align: center;
+    margin-top: 10px;
+    font-family: "DM Mono", monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    transition: color 0.4s ease;
 }
 
 /* (theme toggle now lives in the header) */

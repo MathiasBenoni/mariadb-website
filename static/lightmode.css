@@ -15,6 +15,8 @@
     --header-bg: rgba(245, 240, 232, 0.85);
     --toggle-track: #e8e0d4;
     --toggle-thumb: #b84a2e;
+    --frame-bg: #faf7f2;
+    --frame-shadow: 0 2px 8px rgba(60,40,20,0.08), 6px 6px 0 #e8e0d4;
 }
 
 body {
