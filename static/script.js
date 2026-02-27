@@ -44,32 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const isDark = savedTheme ? savedTheme.includes("darkmode.css") : false;
   applyTheme(isDark);
 
-  // Scroll-hide header
-  const header = document.getElementById("site-header");
-  if (!header) return;
-
-  let lastY = window.scrollY;
-  let ticking = false;
-
-  window.addEventListener(
-    "scroll",
-    () => {
-      if (!ticking) {
-        requestAnimationFrame(() => {
-          const currentY = window.scrollY;
-          if (currentY > lastY && currentY > 60) {
-            header.classList.add("hidden");
-          } else {
-            header.classList.remove("hidden");
-          }
-          lastY = currentY;
-          ticking = false;
-        });
-        ticking = true;
-      }
-    },
-    { passive: true },
-  );
+  // Header is always visible
 });
 
 /* ── Toggle called by the switch ─────────────────────── */

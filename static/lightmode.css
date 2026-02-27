@@ -17,6 +17,12 @@
     --toggle-thumb: #b84a2e;
     --frame-bg: #faf7f2;
     --frame-shadow: 0 2px 8px rgba(60,40,20,0.08), 6px 6px 0 #e8e0d4;
+    --msg-error:         #9b2b11;
+    --msg-error-border:  #d4856e;
+    --msg-error-bg:      #fdf0ec;
+    --msg-success:       #2a6b3c;
+    --msg-success-border:#7eca96;
+    --msg-success-bg:    #eef7f2;
 }
 
 body {

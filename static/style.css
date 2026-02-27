@@ -34,10 +34,6 @@
     -webkit-backdrop-filter: blur(10px);
 }
 
-.site-header.hidden {
-    transform: translateY(-100%);
-}
-
 .site-header__title {
     font-family: "DM Mono", monospace;
     font-size: 0.65rem;
@@ -380,6 +376,59 @@ figcaption {
     text-transform: uppercase;
     color: var(--muted);
     transition: color 0.4s ease;
+}
+
+/* ─── FORM MESSAGE ────────────────────────────────── */
+.form-message {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 4px;
+    border: 1.5px solid;
+    font-family: "DM Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    width: 100%;
+    animation: messageSlide 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+    transition: background 0.4s ease, border-color 0.4s ease, color 0.4s ease;
+}
+
+@keyframes messageSlide {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-message__icon {
+    font-size: 0.65rem;
+    font-weight: bold;
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: currentColor;
+    color: var(--surface);
+}
+
+.form-message--error {
+    color: var(--msg-error);
+    border-color: var(--msg-error-border);
+    background: var(--msg-error-bg);
+}
+
+.form-message--success {
+    color: var(--msg-success);
+    border-color: var(--msg-success-border);
+    background: var(--msg-success-bg);
 }
 
 /* (theme toggle now lives in the header) */

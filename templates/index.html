@@ -38,6 +38,18 @@
       <form action="/" method="post">
           <label for="adjective">Adjective:</label>
           <input type="text" id="adjective" name="adjective" placeholder="This website is...">
+
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for category, message in messages %}
+              <div class="form-message form-message--{{ category }}">
+                <span class="form-message__icon">
+                  {% if category == 'error' %}✕{% else %}✓{% endif %}
+                </span>
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endwith %}
+
           <button type="submit"><span>Add &rarr;</span></button>
       </form>
 
