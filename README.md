@@ -10,8 +10,8 @@ Also planned to do a wordcloud for all the adjectives, instead of just a word
 
 - [x] Update database
 - [x] wordcloud (both for light- and dark mode)
-- [ ] Dark / light mode
-- [ ] Styling
+- [x] Dark / light mode
+- [x] Styling
 - [ ] Get some other feature in
 
 ### Far fetched ideas

@@ -45,6 +45,17 @@ document.addEventListener("DOMContentLoaded", function () {
   applyTheme(isDark);
 
   // Header is always visible
+
+  // Auto-dismiss flash messages after 1 second
+  const messages = document.querySelectorAll(".form-message");
+  messages.forEach((msg) => {
+    setTimeout(() => {
+      msg.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+      msg.style.opacity = "0";
+      msg.style.transform = "translateY(-4px)";
+      setTimeout(() => msg.remove(), 500);
+    }, 1000);
+  });
 });
 
 /* ── Toggle called by the switch ─────────────────────── */
