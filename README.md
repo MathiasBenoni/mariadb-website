@@ -29,7 +29,7 @@ Also planned to do a wordcloud for all the adjectives, instead of just a word
 ### Far fetched ideas
 
 - [ ] Docker
-- [ ] AI to accept only adjectives
+- [x] AI to accept only adjectives
 
 # The installation
 
