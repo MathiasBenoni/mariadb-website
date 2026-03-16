@@ -4,7 +4,7 @@
 
 The dashboard:
 
-![Image of how it looks like on startup](/images/dashboard.png)
+<img src="/images/dashboard.png" alt="Dashboard" width="400">
 
 The wordcloud:
 ![Image of the wordcloud](/images/wordcloud.png)
