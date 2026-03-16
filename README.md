@@ -2,6 +2,16 @@
 
 ## A website that displays the most common adjective describing the website
 
+The dashboard:
+
+![Image of how it looks like on startup](/images/dashboard.png)
+
+The wordcloud:
+![Image of the wordcloud](/images/wordcloud.png)
+
+Lightmode:
+![Image of lightmode](/images/image_light.png)
+
 This website uses python as backend. `app.py` is connected to the HTML. `app.py` then sends this info to `mariadb_python.py`, this script then takes the adjective and stores it in the database. The database is to be updated.
 
 Also planned to do a wordcloud for all the adjectives, instead of just a word
