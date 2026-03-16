@@ -4,13 +4,13 @@
 
 The dashboard:
 
-<img src="/images/dashboard.png" alt="Dashboard" width="400">
+<img src="/images/dashboard.png" alt="Image of the dashboard on startup" width="400">
 
 The wordcloud:
-![Image of the wordcloud](/images/wordcloud.png)
+<img src="/images/wordcloud.png" alt="Image of the wordcloud" width="400">
 
 Lightmode:
-![Image of lightmode](/images/image_light.png)
+<img src="/images/image_light.png" alt="Lightmode" width="400">
 
 This website uses python as backend. `app.py` is connected to the HTML. `app.py` then sends this info to `mariadb_python.py`, this script then takes the adjective and stores it in the database. The database is to be updated.
 
